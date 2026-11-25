@@ -7,9 +7,9 @@ import com.cybindev.messadger.domain.exception.InvalidMessageException;
 
 public record Message(
     UUID id, 
-    String conversationId, 
-    String msg, 
-    String sender, 
+    String conversationId,
+    String sender,
+    String msg,
     Instant sentAt) {
 
         private static final int MAX_LENGTH = 1000;
@@ -19,7 +19,8 @@ public record Message(
 
             if (msg == null || msg.isBlank()) {
 
-                throw new InvalidMessageException("El mensaje no puede estar vacío");
+                throw new InvalidMessageException(
+                    "El mensaje no puede estar vacío");
 
             }
 
